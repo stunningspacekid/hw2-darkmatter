@@ -4,17 +4,18 @@ from collections import namedtuple
 
 
 Result = namedtuple('Result', ('nfev', 'cost', 'gradnorm', 'x'))
-Result.__doc__ = """Results of optimization
+Result.__doc__ = """Результаты оптимизации
 
 Attributes
 ----------
 nfev : int
-    Function call count
+    Полное число вызовов можельной функции
 cost : 1-d array
-    Values of the cost function 0.5 sum(y - f)^2 on every iteration step.
-    Length of this array is less than nfev in the case of LM method
+    Значения функции потерь 0.5 sum(y - f)^2 на каждом итерационном шаге.
+    В случае метода Гаусса—Ньютона длина массива равна nfev, в случае ЛМ-метода
+    длина массива меньше nfev
 gradnorm : float
-    Norm of gradient for the last iteration step
+    Норма градиента на финальном итерационном шаге
 x : 1-d array
-    Final vector, minimising cost function
+    Финальное значение вектора, минимизирующего функцию потерь
 """
